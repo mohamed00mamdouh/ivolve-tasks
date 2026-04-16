@@ -1,8 +1,7 @@
-FROM maven:3.9.14-eclipse-temurin-17-alpine
+FROM openjdk:17-ea-jdk-alpine
 WORKDIR /app
 RUN adduser -D appuser && chown -R appuser:appuser /app
 USER appuser
-COPY . .
-RUN mvn package
-CMD [ "java","-jar","target/demo-0.0.1-SNAPSHOT.jar" ]
+COPY target/demo-0.0.1-SNAPSHOT.jar .
+CMD [ "java","-jar","demo-0.0.1-SNAPSHOT.jar" ]
 EXPOSE 8080
