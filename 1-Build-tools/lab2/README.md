@@ -30,7 +30,9 @@ java -jar ./target/hello-ivolve-1.0-SNAPSHOT.jar
 ![Build Success](img/build.png)
 
 ***3. Generated Artifact in Target Folder:***
+
 ![The Jarfile](img/jarFile.png)
 
 ***4. Running the Application:***
+
 ![Run Success](img/run.png)
