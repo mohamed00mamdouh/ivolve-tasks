@@ -1,0 +1,8 @@
+FROM python:3.11.15-slim-trixie
+WORKDIR /app
+ENV APP_MODE=production
+ENV APP_REGION=canada-west
+RUN pip install flask
+COPY . . 
+EXPOSE 8080
+CMD [ "python", "app.py" ]
