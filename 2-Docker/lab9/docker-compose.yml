@@ -1,0 +1,25 @@
+version: "3.8"
+volumes: 
+  db_mysql:
+services:
+  app: 
+    build: .
+    container_name: app-container
+    environment:
+      DB_HOST: db
+      DB_USER: appuser
+      DB_PASSWORD: complexPassword
+    ports:
+      - "3000:3000"
+    depends_on:
+        - db
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    volumes:
+      - db_mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass123
+      MYSQL_DATABASE: ivolve
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: complexPassword
